@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Tim ICT</title>
+    <!-- 1. Menghubungkan Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800 p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- 2. Header Website -->
+        <header class="bg-blue-600 text-white p-6 rounded-lg shadow-md text-center">
+            <h1 class="text-3xl font-bold mb-2">Pendaftaran Assessment ICT</h1>
+            <p class="text-blue-100 text-sm md:text-base">Silakan isi formulir di bawah ini untuk mendaftarkan tim Anda dan melihat daftar peserta.</p>
+        </header>
+
+        <!-- 3. Form HTML -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-700 border-b pb-2">Formulir Pendaftaran</h2>
+            
+            <form action="#" method="POST" class="space-y-4">
+                
+                <!-- Input Nama & Nama Tim -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Masukkan nama lengkap Anda" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="teamName" class="block text-sm font-medium text-gray-700 mb-1">Nama Tim</label>
+                        <input type="text" id="teamName" name="teamName" placeholder="Masukkan nama tim" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Input Nomor Telepon -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="081234567890" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Select / Dropdown Kategori -->
+                <div>
+                    <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Kategori Lomba</label>
+                    <select id="category" name="category" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="web-design">Web Design</option>
+                        <option value="ui-ux">UI/UX Design</option>
+                        <option value="competitive-programming">Competitive Programming</option>
+                    </select>
+                </div>
+
+                <!-- Radio Button Gender -->
+                <div>
+                    <span class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin</span>
+                    <div class="flex items-center gap-6">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="gender" value="Laki-laki" class="text-blue-600 focus:ring-blue-500">
+                            <span>Laki-laki</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="gender" value="Perempuan" class="text-blue-600 focus:ring-blue-500">
+                            <span>Perempuan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Radio Button Participation Type -->
+                <div>
+                    <span class="block text-sm font-medium text-gray-700 mb-1">Tipe Partisipasi</span>
+                    <div class="flex items-center gap-6">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="participation" value="Individu" class="text-blue-600 focus:ring-blue-500">
+                            <span>Individu</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="participation" value="Kelompok" class="text-blue-600 focus:ring-blue-500">
+                            <span>Kelompok</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Textarea Deskripsi Project -->
+                <div>
+                    <label for="projectDesc" class="block text-sm font-medium text-gray-700 mb-1">Deskripsi Project</label>
+                    <textarea id="projectDesc" name="projectDesc" rows="4" placeholder="Jelaskan ringkasan proyek yang akan dibuat..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <!-- Button Registrasi -->
+                <button type="submit" class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200">
+                    Daftar Sekarang
+                </button>
+
+            </form>
+        </section>
+
+        <!-- 4. HTML Table -->
+        <section class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+            <h2 class="text-2xl font-bold mb-4 text-gray-700 border-b pb-2">Daftar Peserta Terdaftar</h2>
+            
+            <table class="w-full text-left border-collapse border border-gray-200">
+                <thead>
+                    <tr class="bg-gray-100 text-gray-700">
+                        <th class="border border-gray-200 p-3">No</th>
+                        <th class="border border-gray-200 p-3">Nama Lengkap</th>
+                        <th class="border border-gray-200 p-3">Nama Tim</th>
+                        <th class="border border-gray-200 p-3">Kategori</th>
+                        <th class="border border-gray-200 p-3">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-200 p-3">1</td>
+                        <td class="border border-gray-200 p-3 font-medium">Budi Santoso</td>
+                        <td class="border border-gray-200 p-3">CyberTech</td>
+                        <td class="border border-gray-200 p-3">Web Design</td>
+                        <td class="border border-gray-200 p-3"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">Tergabung</span></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-200 p-3">2</td>
+                        <td class="border border-gray-200 p-3 font-medium">Aqeela Nafiza Wibowo</td>
+                        <td class="border border-gray-200 p-3">CodeArt</td>
+                        <td class="border border-gray-200 p-3">UI/UX Design</td>
+                        <td class="border border-gray-200 p-3"><span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+</html>
